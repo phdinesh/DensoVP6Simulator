@@ -1,0 +1,20 @@
+<launch>
+
+  <include file="$(find vp6_gazebo)/launch/vp6_gazebo1.launch">
+  </include>
+
+
+  <!-- <include file="$(find vp6242_moveit)/launch/demo.launch">
+  </include> -->
+
+  <include file="$(find vp6_control)/launch/vp6_control.launch">
+  </include> 
+
+ <!-- <node name="remap_j_states" pkg = "node_remap" type = "node_remap_node"></node> -->
+<node name="remap_ft" pkg = "ahr_test" type = "ftremap"></node>
+<!--
+<node name="joint_state_publisher1" pkg = "ahr_test" type = "sender"></node> -->
+<node name="controller_states_node" pkg = "ahr_test" type = "denso_controllers"></node>
+
+</launch>
+
